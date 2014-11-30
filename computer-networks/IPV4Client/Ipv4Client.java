@@ -131,10 +131,11 @@ public class Ipv4Client {
 	
 	// create randomly generated data
 	private short[] createData(){
-		Random randomDataGenerator = new Random();
-		short[] randomData= new short[1000];
+		Random random = new Random();
+		int randomLength = random.nextInt(16362);
+		short[] randomData= new short[randomLength];
 		for (int i = 10; i < randomData.length; i++){
-			randomData[i] = (short) randomDataGenerator.nextInt(Short.MAX_VALUE);
+			randomData[i] = (short) random.nextInt(Short.MAX_VALUE);
 		}
 		
 		short[] completePackage = buildPackage(randomData);
